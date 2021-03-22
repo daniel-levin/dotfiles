@@ -1,0 +1,14 @@
+[user]
+	email = daniel.levin@platform45.com
+	name = Daniel Levin
+	signingkey = A9A5600BB13DAFAE
+[pull]
+	rebase = false
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[alias]
+	ci = commit -s

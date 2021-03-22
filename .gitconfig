@@ -1,0 +1,10 @@
+[user]
+  name = Daniel Levin
+  email = daniellevin2607@gmail.com
+
+[core]
+  editor = nvim
+[includeIf "gitdir:~/source/repos/p45/"]
+  path = .gitconfig_p45
+[gui]
+	recentrepo = /home/daniel/source/repos/p45/meds-on-time
