@@ -1,3 +1,4 @@
+set ic
 set noerrorbells
 set number
 set backspace=indent,eol,start
@@ -43,6 +44,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'slim-template/vim-slim'
 Plug 'pangloss/vim-javascript'
+Plug 'nfnty/vim-nftables'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -50,9 +52,17 @@ let g:airline#extensions#tabline#enabled = 1
 colorscheme nord
 
 nnoremap <c-f> :FZF<CR>
-nnoremap <c-s> :Rg<CR>
 nnoremap <c-p> :NERDTreeToggle<CR>
+nnoremap <C-j> :BLines<CR>
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
+
+nnoremap <c-s> :Rg<CR>
+nnoremap <c-a> :Rg 
