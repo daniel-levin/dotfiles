@@ -23,9 +23,6 @@ require('lazy').setup({
 'arcticicestudio/nord-vim',
 },
 {
-'preservim/nerdtree'
-},
-{
 'vim-airline/vim-airline'
 },
 {
@@ -43,9 +40,6 @@ use_libuv_file_watcher=true,
 },
 },
 {
-'kshenoy/vim-signature'
-},
-{
 'navarasu/onedark.nvim'
 },
 {
@@ -55,7 +49,7 @@ use_libuv_file_watcher=true,
 'rmehri01/onenord.nvim',
 config = function()
 require('onenord').setup({
-	theme = "dark",
+theme="dark"
 })
 end,
 },
@@ -92,4 +86,5 @@ vim.keymap.set('n', '<leader>j', builtin.current_buffer_fuzzy_find, {})
 
 vim.cmd([[
 let g:airline#extensions#tabline#enabled=1
+colorscheme nord
 ]])
