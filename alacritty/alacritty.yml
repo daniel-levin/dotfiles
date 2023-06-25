@@ -1,0 +1,5 @@
+font:
+  normal:
+    family: "Berkeley Mono"
+  size: 14.0
+  antialiasing: 'none'
