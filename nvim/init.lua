@@ -75,6 +75,7 @@ vim.keymap.set('n', '<C-m>', ':bnext!<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<C-d>', ':bp|:bd #<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>n', ':noh<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>h', ':HopWord<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<CR>', ':w<cr>', {silent=true, noremap=true})
 
 local builtin = require('telescope.builtin')
 
@@ -87,4 +88,5 @@ vim.keymap.set('n', '<leader>j', builtin.current_buffer_fuzzy_find, {})
 vim.cmd([[
 let g:airline#extensions#tabline#enabled=1
 colorscheme nord
+set ignorecase
 ]])
