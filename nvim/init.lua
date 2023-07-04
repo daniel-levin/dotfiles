@@ -38,6 +38,11 @@ follow_current_file = true,
 use_libuv_file_watcher=true,
 },
 },
+config = function()
+require("neo-tree").setup({
+enable_git_status = false,
+})
+end
 },
 {
 'navarasu/onedark.nvim'
@@ -68,6 +73,11 @@ end,
 group = highlight_group,
 pattern = '*',
 })
+
+vim.keymap.set('n', '<leader>1', ':colorscheme nord<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>2', ':colorscheme onedark<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>3', ':colorscheme onenord<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>4', ':colorscheme onenord-light<cr>', {silent=true, noremap=true})
 
 vim.keymap.set('n', '<C-p>', ':NeoTreeShowToggle<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<C-n>', ':bprevious!<cr>', {silent=true, noremap=true})
