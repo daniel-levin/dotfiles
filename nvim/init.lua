@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 {
-'arcticicestudio/nord-vim',
+'nordtheme/vim',
 },
 {
 'vim-airline/vim-airline'
@@ -31,7 +31,7 @@ dependencies = { 'nvim-lua/plenary.nvim' }
 },
 {
 'nvim-neo-tree/neo-tree.nvim',
-dependencies = {'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons'},
+dependencies = {'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim'},
 opts = {
 filesystem = {
 follow_current_file = true,
@@ -41,6 +41,14 @@ use_libuv_file_watcher=true,
 config = function()
 require("neo-tree").setup({
 enable_git_status = false,
+default_component_configs = {
+icon = {
+folder_closed = "→",
+folder_empty = "→",
+folder_open = "↓",
+default = "¬",
+},
+},
 })
 end
 },
@@ -51,15 +59,10 @@ end
 'rust-lang/rust.vim'
 },
 {
-'rmehri01/onenord.nvim',
-config = function()
-require('onenord').setup({
-theme="dark"
-})
-end,
+'phaazon/hop.nvim'
 },
 {
-'phaazon/hop.nvim'
+'vim-scripts/aiseered.vim'
 }
 }, {})
 
@@ -76,15 +79,18 @@ pattern = '*',
 
 vim.keymap.set('n', '<leader>1', ':colorscheme nord<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>2', ':colorscheme onedark<cr>', {silent=true, noremap=true})
-vim.keymap.set('n', '<leader>3', ':colorscheme onenord<cr>', {silent=true, noremap=true})
-vim.keymap.set('n', '<leader>4', ':colorscheme onenord-light<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>3', ':colorscheme aiseered<cr>', {silent=true, noremap=true})
 
 vim.keymap.set('n', '<C-p>', ':NeoTreeShowToggle<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<C-n>', ':bprevious!<cr>', {silent=true, noremap=true})
-vim.keymap.set('n', '<C-m>', ':bnext!<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<C-j>', ':bnext!<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<C-d>', ':bp|:bd #<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>n', ':noh<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<leader>h', ':HopWord<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>o', ':NeoTreeFloatToggle<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>v', ':vsplit<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>f', ':RustFmt<cr>', {silent=true, noremap=true})
+vim.keymap.set('n', '<leader>q', ':q<cr>', {silent=true, noremap=true})
 vim.keymap.set('n', '<CR>', ':w<cr>', {silent=true, noremap=true})
 
 local builtin = require('telescope.builtin')
@@ -100,3 +106,4 @@ let g:airline#extensions#tabline#enabled=1
 colorscheme nord
 set ignorecase
 ]])
+
